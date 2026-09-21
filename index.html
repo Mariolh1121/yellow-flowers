@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Para Dany 🍂</title>
+<style>
+:root{--cream:#ffe5c7;--gold:#ffb35c;--orange:#e66b32;--red:#9d2945;--purple:#6c3a88;--night:#160f24}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#120c1d;color:var(--cream);font-family:Georgia,'Times New Roman',serif}
+button{font:inherit}.scene{position:fixed;inset:0;opacity:0;pointer-events:none;transition:opacity 1.2s ease}.scene.active{opacity:1;pointer-events:auto}
+#sky{position:fixed;inset:0;background:radial-gradient(circle at 50% 70%,#8d3f4c 0,#3c204a 32%,#1a1029 64%,#0b0812 100%)}
+#sky:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(7,5,11,.9));pointer-events:none}
+.stars{position:fixed;inset:0;background-image:radial-gradient(#ffd9a2 1px,transparent 1.5px);background-size:55px 55px;opacity:.25;animation:twinkle 4s ease-in-out infinite alternate}@keyframes twinkle{to{opacity:.5}}
+.leaf{position:fixed;top:-12vh;font-size:20px;opacity:.75;animation:fall linear infinite;z-index:20}@keyframes fall{to{transform:translate(var(--drift),120vh) rotate(540deg)}}
+.center{position:absolute;inset:0;display:grid;place-items:center;padding:28px;text-align:center;z-index:10}.card{max-width:650px;text-shadow:0 2px 14px #000}.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;opacity:.7}.title{font-size:clamp(2.5rem,11vw,5.4rem);font-weight:400;font-style:italic;margin:.12em 0}.subtitle{font-size:clamp(1.1rem,4.5vw,1.65rem);line-height:1.5}.heart{font-size:1.6rem;color:#ffc08c;animation:pulse 1.6s infinite}@keyframes pulse{50%{transform:scale(1.18)}}
+.btn{border:1px solid rgba(255,225,196,.55);background:rgba(255,220,185,.94);color:#4a2332;border-radius:999px;padding:14px 25px;box-shadow:0 8px 30px rgba(0,0,0,.35);cursor:pointer;margin-top:22px;transition:.25s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(255,153,92,.2)}
+.storyText{position:absolute;left:50%;top:11%;transform:translateX(-50%);width:min(88%,600px);text-align:center;font-size:clamp(1.15rem,5vw,1.65rem);line-height:1.55;z-index:12;text-shadow:0 2px 14px #000;transition:opacity .7s}
+.ground{position:absolute;left:-10%;right:-10%;bottom:-8%;height:34%;background:radial-gradient(ellipse at center,#402419,#160e12 68%);border-radius:50% 50% 0 0/25% 25% 0 0;z-index:2;box-shadow:0 -20px 60px rgba(255,116,48,.08)}
+.seed{position:absolute;left:50%;bottom:21%;width:10px;height:7px;border-radius:50%;background:#6e4427;z-index:5;transform:translateX(-50%);box-shadow:0 0 16px #ff9d4d}
+.garden{position:absolute;inset:0;z-index:5;pointer-events:none}.flower{position:absolute;bottom:18%;left:var(--x);width:90px;height:var(--h);transform:translateX(-50%) scale(0);transform-origin:50% 100%;animation:grow 1.8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--delay);filter:drop-shadow(0 0 12px rgba(255,137,75,.12))}@keyframes grow{to{transform:translateX(-50%) scale(1)}}
+.stem{position:absolute;left:50%;bottom:0;width:4px;height:75%;background:linear-gradient(#53723b,#263e29);border-radius:8px;transform:translateX(-50%)}.leafL,.leafR{position:absolute;width:28px;height:13px;background:#435e34;border-radius:100% 0 100% 0;bottom:35%;left:48%;transform:rotate(-28deg);transform-origin:left center}.leafR{left:auto;right:48%;transform:scaleX(-1) rotate(-28deg)}
+.bloom{position:absolute;left:50%;top:0;width:56px;height:56px;transform:translateX(-50%);animation:sway 3.8s ease-in-out infinite alternate}@keyframes sway{to{transform:translateX(-50%) rotate(4deg)}}.petal{position:absolute;left:20px;top:2px;width:18px;height:31px;background:var(--c);border-radius:70% 30% 70% 30%;transform-origin:9px 26px;box-shadow:inset 0 -5px 9px rgba(70,20,40,.18)}.petal:nth-child(1){transform:rotate(0deg)}.petal:nth-child(2){transform:rotate(60deg)}.petal:nth-child(3){transform:rotate(120deg)}.petal:nth-child(4){transform:rotate(180deg)}.petal:nth-child(5){transform:rotate(240deg)}.petal:nth-child(6){transform:rotate(300deg)}.core{position:absolute;left:20px;top:20px;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle,#ffd67b,#a95b24 70%);box-shadow:0 0 10px #ffb55c}
+.glow{position:fixed;width:5px;height:5px;border-radius:50%;background:#ffd68a;box-shadow:0 0 12px 4px rgba(255,188,105,.55);z-index:8;animation:float var(--t) ease-in-out infinite alternate}@keyframes float{to{transform:translate(var(--dx),var(--dy));opacity:.35}}
+#letterScene{background:radial-gradient(circle at 50% 25%,rgba(126,59,88,.32),rgba(12,8,18,.94))}.paper{width:min(90vw,600px);max-height:76vh;overflow:auto;background:#f5dfc3;color:#4b2a2e;padding:34px 28px;border-radius:4px;box-shadow:0 18px 70px #000;position:relative;text-align:left;line-height:1.7;font-family:Georgia,serif}.paper:before{content:"";position:absolute;inset:8px;border:1px solid rgba(110,58,55,.22);pointer-events:none}.paper h2{font-style:italic;font-weight:400;font-size:2rem;margin:0 0 16px}.paper p{white-space:pre-line}.close{position:absolute;right:18px;top:14px;border:0;background:none;font-size:1.5rem;color:#5a3037;cursor:pointer}.finalGarden{position:absolute;inset:0;background:linear-gradient(to bottom,#4e264e,#b34d42 47%,#e77c3c 66%,#1b1019 67%)}.finalText{position:absolute;z-index:15;left:50%;top:16%;transform:translateX(-50%);width:90%;text-align:center;text-shadow:0 2px 16px #351020}.finalText h1{font-size:clamp(2rem,8vw,4.2rem);font-weight:400;font-style:italic;margin:.2em}.finalText p{font-size:clamp(1rem,4vw,1.35rem)}
+.hint{font-size:.8rem;opacity:.65;margin-top:12px}@media(max-width:500px){.flower{width:70px}.paper{padding:30px 22px}.storyText{top:8%}}
+</style>
+</head>
+<body>
+<div id="sky"></div><div class="stars"></div><div id="leaves"></div><div id="fireflies"></div>
+<section id="intro" class="scene active"><div class="center"><div class="card"><div class="eyebrow">Para</div><h1 class="title">Dany</h1><div class="subtitle">Para la flor más bonita del otoño</div><div class="heart">♡</div><button class="btn" id="start">Toca para comenzar</button><div class="hint">Un pequeño jardín para ti</div></div></div></section>
+<section id="story" class="scene"><div class="storyText" id="storyText"></div><div class="seed" id="seed"></div><div class="garden" id="garden"></div><div class="ground"></div></section>
+<section id="final" class="scene"><div class="finalGarden"></div><div class="garden" id="finalFlowers"></div><div class="finalText"><h1>Para la flor más bonita del otoño</h1><div class="heart">♡</div><p>Este jardín creció pensando en ti.</p><button class="btn" id="openLetter">Tengo algo más para ti…</button></div></section>
+<section id="letterScene" class="scene"><div class="center"><article class="paper"><button class="close" id="closeLetter">×</button><h2>Dany,</h2><p id="letter"></p></article></div></section>
+<script>
+
+const cartaParaDany = `
+Hola mi amor,
+
+Se que esta vez no pude darte flores, pero no quería no hacer nada
+por ello. 
+
+Se que estos días han sido cansados y a veces sentimos que no terminamos
+de avanzar con nuestras tareas. Pero recuerda que no importan los
+problemas que tengamos, sino que hacemos con ellos para resolverlas,
+por lo que tenemos que ser pacientes mi amor.
+
+Eres mi ángel protector y la persona con la que
+quiero pasar el resto de mi vida. No importa cómo, cuanto, o qué
+tan difícil sea, por que cuando es contigo, siempre vale la pena.
+
+Siempre estaré feliz y orgulloso de ver como cumples todos los
+sueños y metas que te propones y solo anhelo que me permitas 
+ser parte de ello. 
+
+Se que al final esto no es tanto como lo que te mereces, pero
+lo hago con todo el amor del mundo, al saber que soy el más 
+afortunado de poder pasar un otoño más a tu lado.
+
+Te amo mi pequeña flor, sabes que eres lo más bonito de mi vida.
+
+Con todo el amor del mundo,
+Mario 💜
+`;
+
+const scenes=[...document.querySelectorAll('.scene')];
+const show=id=>{scenes.forEach(s=>s.classList.toggle('active',s.id===id));};
+const colors=['#713f91','#9b3c76','#d55738','#e87932','#a62943','#6d4ca1','#d84c35'];
+function flowerHTML(c){return `<div class="stem"></div><div class="leafL"></div><div class="leafR"></div><div class="bloom" style="--c:${c}">${'<i class="petal"></i>'.repeat(6)}<i class="core"></i></div>`}
+function plant(container,count=18,delayed=true){container.innerHTML='';for(let i=0;i<count;i++){const f=document.createElement('div');f.className='flower';f.style.setProperty('--x',`${4+Math.random()*92}%`);f.style.setProperty('--h',`${105+Math.random()*150}px`);f.style.setProperty('--delay',`${delayed?(.3+i*.16+Math.random()*.3):0}s`);f.style.zIndex=String(4+Math.floor(Math.random()*6));f.innerHTML=flowerHTML(colors[i%colors.length]);container.appendChild(f)}}
+function ambience(){const leaves=document.getElementById('leaves');['🍂','🍁','❧'].forEach((x,k)=>{for(let i=0;i<4;i++){let e=document.createElement('span');e.className='leaf';e.textContent=x;e.style.left=`${Math.random()*100}%`;e.style.animationDuration=`${8+Math.random()*9}s`;e.style.animationDelay=`${-Math.random()*12}s`;e.style.setProperty('--drift',`${-80+Math.random()*160}px`);leaves.appendChild(e)}});const ff=document.getElementById('fireflies');for(let i=0;i<18;i++){let e=document.createElement('i');e.className='glow';e.style.left=`${Math.random()*100}%`;e.style.top=`${20+Math.random()*70}%`;e.style.setProperty('--t',`${2+Math.random()*4}s`);e.style.setProperty('--dx',`${-40+Math.random()*80}px`);e.style.setProperty('--dy',`${-50+Math.random()*100}px`);ff.appendChild(e)}}
+ambience();document.getElementById('letter').textContent=cartaParaDany.trim();
+const lines=[
+  'Aunque hoy no pueda darte flores en persona…<br>quise encontrar otra manera.',
+  'En las pequeñas semillas…',
+  'A veces, las cosas más bonitas<br>también necesitan tiempo para florecer.',
+  'Donde pronto aparecen los primeros petalos…',
+  'Morados, naranjas y rojos.<br>Los colores de un otoño que apenas comienza.',
+  'Y poco a poco…<br> comienzan a florecer',
+  'Porque hay personas que hacen que todo a su alrededor<br>se sienta un poquito más cálido y lindo como el otoño',
+  'Y para mí bonita<br>tú eres esa persona. ♡'
+];
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function begin(){show('story');const t=document.getElementById('storyText');const garden=document.getElementById('garden');document.getElementById('seed').style.display='block';for(let i=0;i<lines.length;i++){t.style.opacity=0;await wait(450);t.innerHTML=lines[i];t.style.opacity=1;if(i===2){plant(garden,6,true)}if(i===4){plant(garden,13,true)}if(i===5){plant(garden,24,true)}await wait(i<2?2200:2600)}t.style.opacity=0;await wait(900);plant(document.getElementById('finalFlowers'),30,false);show('final')}
+document.getElementById('start').onclick=begin;document.getElementById('openLetter').onclick=()=>show('letterScene');document.getElementById('closeLetter').onclick=()=>show('final');
+</script>
+</body>
+</html>
